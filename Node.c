@@ -12,7 +12,7 @@ Node* cria() {
 }
 
 void adicionaAoInicio(Node* cabeca, int valor) {
-    // CRIA NOVO NÓ
+    // CRIA NOVO NÃ“
     Node* novoNodo = cria();
     novoNodo->info = valor;
     novoNodo->proximo = cabeca;
@@ -21,18 +21,18 @@ void adicionaAoInicio(Node* cabeca, int valor) {
 }
 
 void adicionaAoFinal(Node* cabeca, int valor) {
-    // PERCORRE ATÉ O FINAL
+    // PERCORRE ATÃ‰ O FINAL
     Node* atual = cabeca;
     while( atual->proximo != NULL){
         atual = atual->proximo;
     }
 
-    // CRIA NOVO NÓ
+    // CRIA NOVO NÃ“
     Node* novoNodo = cria();
     novoNodo->info = valor;
     novoNodo->proximo = NULL;
 
-    // SETA O NOVO NÓ COMO ÚLTIMO
+    // SETA O NOVO NÃ“ COMO ÃšLTIMO
     atual->proximo = novoNodo;
 }
 
@@ -49,7 +49,7 @@ int removeDoFinal(Node* cabeca){
         return valorRemovido;
     }
 
-    // PERCORRE ATÉ O FINAL
+    // PERCORRE ATÃ‰ O FINAL
     Node* atual = cabeca;
     while( atual->proximo->proximo != NULL){
         atual = atual->proximo;
@@ -62,13 +62,15 @@ int removeDoFinal(Node* cabeca){
 }
 
 void removeEscolhido(Node* cabeca, int value){
-	// PERCORRE ATÉ O FINAL
+	// PERCORRE ATÃ‰ O FINAL
     Node* atual = cabeca;
-	while( atual->proximo != NULL){
-		//Verifa se a info do proximo é igual ao valor recebido
+	while(atual->proximo != NULL){
+		//Verifa se a info do proximo Ã© igual ao valor recebido
         if(atual->proximo->info == value){
-        	free(atual->proximo);		
-        	atual->proximo = atual->proximo->proximo;
+        	printf("Aqui antes: %d\n", atual->proximo->info);
+			int aux = atual->proximo; 
+			atual->proximo = atual->proximo->proximo; 
+			free(aux);
 		}
 		atual = atual->proximo;		
     }	
