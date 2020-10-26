@@ -67,7 +67,6 @@ void removeEscolhido(Node* cabeca, int value){
 	while(atual->proximo != NULL){
 		//Verifa se a info do proximo é igual ao valor recebido
         if(atual->proximo->info == value){
-        	printf("Aqui antes: %d\n", atual->proximo->info);
 			int aux = atual->proximo; 
 			atual->proximo = atual->proximo->proximo; 
 			free(aux);
