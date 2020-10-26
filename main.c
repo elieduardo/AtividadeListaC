@@ -23,7 +23,7 @@ int main()
     imprimir(head);
 
     printf("removi o valor 3 da lista\n");
-    removeEscolhido(head, 4);
+    removeEscolhido(head, 3);
     imprimir(head);
     
     
