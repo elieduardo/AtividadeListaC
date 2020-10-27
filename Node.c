@@ -5,9 +5,7 @@
 Node* cria() {
     Node* cabeca = NULL;
     cabeca = (Node*) malloc(sizeof(Node));
-    if (cabeca == NULL) {
-        return (Node*)1;
-    }
+    
     return cabeca;
 }
 
@@ -39,7 +37,7 @@ void adicionaAoFinal(Node* cabeca, int valor) {
 int removeDoFinal(Node* cabeca){
     int valorRemovido = 0;
     // VERIFICA SE TEM ALGO NA LISTA
-    if (cabeca->proximo == NULL && cabeca->info == NULL) {       	
+    if (cabeca->proximo == NULL) {
 		printf("Nao existe conteudo para ser excluido.\n");
 		return 1;
     }
@@ -83,7 +81,7 @@ void imprimir(Node* cabeca){
     Node* atual = cabeca;
     if (cabeca->proximo == NULL) {
 		printf("Nao existe valor para ser impresso.\n");
-		return 1;
+		return;
 	}
     
     while( atual != NULL){

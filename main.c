@@ -19,7 +19,7 @@ int main()
     imprimir(head);
     
     //removeEscolhido
-	removeEscolhido(head, 5);
+	removeDoFinal(head);
 	imprimir(head);
 
     return 0;
