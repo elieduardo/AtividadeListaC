@@ -6,7 +6,7 @@ Node* cria() {
     Node* cabeca = NULL;
     cabeca = (Node*) malloc(sizeof(Node));
     if (cabeca == NULL) {
-        return 1;
+        return (Node*)1;
     }
     return cabeca;
 }
@@ -67,7 +67,7 @@ void removeEscolhido(Node* cabeca, int value){
 	while(atual->proximo != NULL){
 		//Verifa se a info do proximo é igual ao valor recebido
         if(atual->proximo->info == value){
-			int aux = atual->proximo; 
+			Node* aux = atual->proximo; 
 			atual->proximo = atual->proximo->proximo; 
 			free(aux);
 		}
@@ -82,4 +82,24 @@ void imprimir(Node* cabeca){
         printf("valor: %d\n", atual->info);
         atual = atual->proximo;
     }
+}
+
+void adicionaOrdenado(Node* head, int value) {
+    Node* atual = head;
+    while (atual != NULL) {
+        if (value < atual->info) {
+            Node* cloneAtual = cria();
+            cloneAtual->info = atual->info;
+            cloneAtual->proximo = atual->proximo;
+            
+            atual->proximo = cloneAtual;
+            atual->info = value;
+
+            return;
+        }
+
+        atual = atual->proximo;
+    }
+
+    adicionaAoFinal(head, value);
 }

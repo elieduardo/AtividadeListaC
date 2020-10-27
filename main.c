@@ -10,23 +10,14 @@ int main()
     head->proximo = NULL;
 
     adicionaAoFinal(head, 1);
-    adicionaAoFinal(head, 2);
-    adicionaAoFinal(head, 3);
-    adicionaAoFinal(head, 4);
     adicionaAoFinal(head, 5);
+    adicionaAoFinal(head, 2);
+    adicionaAoFinal(head, 4);
 
-    adicionaAoInicio(head, 6);
-
+    //imprimir(head);
+    adicionaOrdenado(head, 4);
     imprimir(head);
 
-    printf("removi o valor %d da lista\n", removeDoFinal(head));
-    imprimir(head);
-
-    printf("removi o valor 3 da lista\n");
-    removeEscolhido(head, 3);
-    imprimir(head);
-    
-    
     return 0;
 }
 

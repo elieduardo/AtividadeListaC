@@ -18,5 +18,7 @@ void removeEscolhido(Node* head, int value);
 
 void imprimir(Node* head);
 
+void adicionaOrdenado(Node* head, int value);
+
 #endif // NODE_H_INCLUDED
 
