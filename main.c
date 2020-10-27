@@ -15,8 +15,12 @@ int main()
     adicionaAoFinal(head, 4);
 
     //imprimir(head);
-    adicionaOrdenado(head, 4);
+    adicionaOrdenado(head, 3);
     imprimir(head);
+    
+    //removeEscolhido
+	removeEscolhido(head, 5);
+	imprimir(head);
 
     return 0;
 }

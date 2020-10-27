@@ -39,15 +39,18 @@ void adicionaAoFinal(Node* cabeca, int valor) {
 int removeDoFinal(Node* cabeca){
     int valorRemovido = 0;
     // VERIFICA SE TEM ALGO NA LISTA
-    if (cabeca->proximo == NULL) {   		
-		printf("Entrou!");
-		valorRemovido = cabeca->info;
-		
+    if (cabeca->proximo == NULL && cabeca->info == NULL) {       	
+		printf("Nao existe conteudo para ser excluido.\n");
+		return 1;
+    }
+    else if(cabeca->proximo == NULL){
+    	valorRemovido = cabeca->info;		
 		free(cabeca);
+		
         cabeca = NULL;
 		        	        
         return valorRemovido;
-    }
+	}
 
     // PERCORRE ATÉ O FINAL
     Node* atual = cabeca;
@@ -78,6 +81,11 @@ void removeEscolhido(Node* cabeca, int value){
 
 void imprimir(Node* cabeca){	
     Node* atual = cabeca;
+    if (cabeca->proximo == NULL) {
+		printf("Nao existe valor para ser impresso.\n");
+		return 1;
+	}
+    
     while( atual != NULL){
         printf("valor: %d\n", atual->info);
         atual = atual->proximo;
